@@ -4,55 +4,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Anarchy in the Oven</title>
-  <style>
-    body {
-      background-color: #000;
-      background-image: url('comingsoonbackground.jpg');
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      color: #fff;
-      font-family: 'Courier New', Courier, monospace;
-      text-align: center;
-      padding: 100px 20px;
-    }
-    h1 {
-      font-size: 3em;
-      letter-spacing: 2px;
-      font-family: 'Courier New', Courier, monospace;
-      display: inline-block;
-      padding: 20px;
-      transform: rotate(-2deg);
-      background: rgba(0,0,0,0.7);
-      border: 8px double #fff;
-      outline: 4px dashed #fff;
-    }
-    .subhead {
-      margin-top: 20px;
-      font-size: 1.5em;
-      white-space: pre-wrap;
-      font-family: 'Courier New', Courier, monospace;
-      display: inline-block;
-      padding: 15px;
-      background: rgba(0,0,0,0.7);
-    }
-    @media (max-width: 600px) {
-      body {
-        padding: 50px 10px;
-      }
-      h1 {
-        font-size: 2em;
-      }
-      .subhead {
-        font-size: 1.2em;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Anarchy in the Oven</h1>
-  <div class="subhead">Recipes and thoughts from the mind of Chef Mitch Parks
-Coming soon.</div>
+  <header><h1>Anarchy in the Oven</h1></header>
+  <nav>
+    <a href="#" onclick="showSection('home')">home</a>
+    <a href="#" onclick="showSection('recipes')">recipes</a>
+    <a href="#" onclick="showSection('about')">about chef</a>
+    <a href="#" onclick="showSection('gallery')">image gallery</a>
+    <a href="#" onclick="showSection('blog')">blog</a>
+    <a href="#" onclick="showSection('contact')">contact</a>
+  </nav>
+  <main>
+    <section id="home"><h2>Home</h2><p>This will be the home page.</p></section>
+    <section id="recipes"><h2>Recipes</h2><p>Recipes will go here.</p></section>
+    <section id="about"><h2>About Chef Parks</h2><img src="about_mitch.jpg" alt="Chef Mitch Parks" class="about" /><p>Details about Chef Mitch Parks will go here, blah blah blah.</p></section>
+    <section id="gallery"><h2>Image Gallery</h2><p>Photos and kitchen chaos will live here.</p></section>
+    <section id="blog"><h2>Blog</h2><p>Rants, recipes, and stories will show up here.</p></section>
+    <section id="contact">
+      <h2>yell at me</h2>
+      <form action="mailto:admin@anarchyintheoven.com,derek.ware.05@gmail.com" method="post" enctype="text/plain">
+        <input type="text" name="Name" placeholder="who are you?" required>
+        <input type="email" name="Email" placeholder="and an e-mail addy" required>
+        <input type="tel" name="Phone" placeholder="gimme your digits">
+        <textarea name="Message" rows="5" placeholder="what the fuck do you want?!" required></textarea>
+        <input type="submit" value="send">
+      </form>
+    </section>
+  </main>
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('main section').forEach(sec => sec.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
 </body>
 </html>
-
